@@ -1,0 +1,237 @@
+
+ /* layout https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-tea-cozy-redline.jpg */
+html {
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    background-color: black;
+    color: seashell;
+    opacity: 0.8;
+
+}
+ a{
+     text-decoration: underline;
+ }
+ li {
+     list-style: none;
+     display: flex;
+ }
+ 
+ header {
+     border-bottom: 1px solod seashell; 
+     background-color: black;
+     position: fixed;
+     width: 100%;
+     height: 69px;
+     border-bottom: 1px solid seashell; 
+
+ }
+ .header-container {
+     /* margin: 0 auto; set to the center */
+     display: flex;
+     justify-content: space-between; /*разнести в разные стороны */
+ }
+ .header-container a {
+    color: seashell;
+    margin-right: 10px; 
+    padding: 20px 10px;
+}
+.header-container img {
+    height: 50px;
+    width: auto;
+    padding: 10px;
+} 
+ul {
+    display: flex; /*располагаем горизонтально*/
+}
+.header-container a:hover {
+    background-color: gray;
+}
+
+#menu-checkbox {
+    display: none; /*для дальнейшего адаптивного меню*/
+}
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+.top-slide {
+    background-image: url(https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-mission-background.jpg);
+    width: 1200px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+} 
+.top-container {
+    min-width: 100%;
+    height: 14%;
+    background-color: black;
+}
+.top-slide h1 {
+    text-align: center;
+    padding-top: 10px;
+} 
+.top-slide h4 {
+    text-align: center;
+    padding-top: 18px;
+} 
+.specialize-container {
+    width: 100%;
+    margin: 0 auto; /*set in the center*/
+    text-align: center;
+}
+.specialize-container h1 {
+    padding-top: 35px;
+}    
+.specialize-container h4 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.specialize-cards-line1 {
+    max-width: 1000px;
+    margin: 0 auto; /*set in the center*/
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.specialize-cards-line2 {
+    max-width: 700px;
+    margin: 0 auto; /*set in the center*/
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.topcard img {
+    width: 300px;
+    height: 200px;
+}
+.bottomcard h4 {
+    margin: 10px;
+}
+.wraper {
+    background-image: url(https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-locations-background.jpg);
+    background-repeat: no-repeat;
+    max-width: 1200px;
+    max-height: 500px;
+    text-align: center;
+    padding: 150px 0 150px 0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+}    
+
+.location_wraper {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.certain_location {
+    width: 300px;
+    height: 300px;
+    background-color: black;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px;
+}
+.contacts {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer {
+    margin: 0 0 40px 20px;
+}
+
+
+/* smartphone adjusting  */
+@media screen and (max-width: 900px) {
+    .header-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; /*равномерно распределит */
+    }
+    .main-menu {
+        display: none; /*hide after screen shrink */
+    }
+    .main-menu li {
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        background-color: black;
+    }
+    .main-menu a {
+        display: block;
+        padding: 8px;
+    }
+    .toggle-button {
+        text-align: center;
+        display: block;
+        cursor: pointer; /* будет ссылкой */
+        color: seashell;
+        font-size: 15px;
+        margin-top: 25px;
+    }
+    .toggle-button:after {
+        content: attr(data-open); 
+        display: block;
+    }
+    #menu-checkbox:checked + nav[role="navigation"] .main-menu {
+        display: block; /*меню видимо когда активен */
+
+    }
+    #menu-checkbox:checked + nav[role="navigation"] .toggle-button:after {
+        content: attr(data-close); 
+    }
+    /*чтоб не прыгало */
+    .header-container {
+        margin-right: -30px;
+    }
+    .main-menu {
+        position: relative;
+        top: 30px;
+    }
+    .top-slide h4 {
+        display: none;
+    }
+    .specialize-cards-line1 {
+        flex-direction: column;
+        justify-items: center;
+    }    
+    .wraper {
+        width: auto;
+        height: auto;
+        flex-wrap: wrap;
+        justify-items: center;
+
+    }
+    .location_wraper {
+        width: auto;
+        height: auto;
+        flex-wrap: nowrap;
+        justify-items: center;
+        font-size: 17px;
+    }
+
+}
